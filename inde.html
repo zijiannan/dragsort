@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格布局图片拖动排序</title>
+    <style>
+        body {
+            background-color: #232323
+        }
+
+        h3 {
+            text-align: center;
+            color: #606060
+        }
+
+        .container {
+            width: 900px;
+            margin: 50px auto;
+        }
+
+        .demo li {
+            width: 180px;
+            height: 180px;
+            float: left;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: none;
+        }
+
+        .demo li>img {
+            width: 180px;
+            height: 180px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h3>拖动图片进行排序</h3>
+    <div class="container">
+        <ul class="demo">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/7.jpg" alt=""></li>
+            <li><img src="images/8.jpg" alt=""></li>
+            <li><img src="images/9.jpg" alt=""></li>
+            <li><img src="images/10.jpg" alt=""></li>
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/12.jpg" alt=""></li>
+            <li><img src="images/13.jpg" alt=""></li>
+            <li><img src="images/14.jpg" alt=""></li>
+            <li><img src="images/15.jpg" alt=""></li>
+            <li><img src="images/16.jpg" alt=""></li>
+            <li><img src="images/17.jpg" alt=""></li>
+            <li><img src="images/18.jpg" alt=""></li>
+            <li><img src="images/19.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.1.1.js"></script>
+<script type="text/javascript" src="js/dragsort.js"></script>
+<script>
+    $(function () {
+        try {
+            $(".demo").dragsort({
+                dragSelector: "img",
+                dragBetween: true,
+                dragEnd: function () {
+                    console.log('此处可放拖动结束后的方法。')
+                }
+            });
+        } catch (e) {
+
+        }
+    }) 
+</script>
+
+</html>
